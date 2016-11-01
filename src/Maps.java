@@ -17,7 +17,10 @@ public class Maps {
  public Maps(){
  
  }
-
+//Lecture du fichier .txt contenant le labyrinthe sous forme de x (mur),o (le chemin) et a (l'arrivée). Chaque lettre est mis dans un matrice de dimension 2 
+ //(ligne et colonne). Enfin , renvoit de la lettre selon la position spécifiée lors de l'appel de méthode
+ 
+ 
      public char getMaps(int r, int t) throws IOException{
      InputStreamReader gg1 =null;
             BufferedReader gg = null;

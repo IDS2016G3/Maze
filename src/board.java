@@ -1,7 +1,5 @@
 
 
-
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -38,7 +36,9 @@ public static JPanel b1 = new JPanel();
    new board();
    
    } 
-    
+  
+   //Creation de la fenetre qui va contenir le labyrinthe et les commandes des mouvements du joueur
+   
     public board(){
     
     f.setTitle("Nouveau Labyrinthe");
@@ -65,7 +65,34 @@ public static JPanel b1 = new JPanel();
     f.setVisible(true);
   
     }
+   
+   //Fenêtre du message de la victoire du joueur
+
+public class finMessage extends JPanel {
     
+    public finMessage(){
+    JFrame Fin = new JFrame();
+    Fin.setTitle(p1.getName() +", vous avez gagné!!");
+    Fin.setSize(400,400);
+    Fin.setLocationRelativeTo(null);  
+    Fin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    Fin.setContentPane(new graficimage());
+    Fin.setVisible(true);
+    }
+  }
+
+    public class graficimage extends JPanel{
+public void paintComponent(Graphics g){
+      super.paintComponent(g);
+ImageIcon img = new ImageIcon ("/Users/Christophe/Desktop/victoire.jpg");
+                 Image path = img.getImage();
+                 g.drawImage(path,0,0, this.getWidth(),this.getHeight(),this);
+}}
+    
+
+    /*Diverses actions implémentées lorsque le joueur clique sur les boutons d'un mouvement
+    *Une fois que le joueur arrive à l'arrivée, une nouvelle fenêtre s'ouvre pour dire qu'il a gagné
+    */
 @Override
 public void actionPerformed(ActionEvent arg0){  
 
@@ -147,21 +174,7 @@ public void actionPerformed(ActionEvent arg0){
   
 }
 
-public class finMessage extends JPanel {
-    
-    public finMessage(){
-    JFrame Fin = new JFrame();
-    Fin.setTitle(p1.getName() +", vous avez gagné!!");
-    Fin.setSize(400,50);
-    Fin.setLocationRelativeTo(null);  
-    Fin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    JPanel fincolor = new JPanel();
-    fincolor.setBackground(Color.BLACK);
-    Fin.setContentPane(fincolor);
-    Fin.setVisible(true);
-    }
-  }
-
+// Partie graphique pour le joueur et le labyrinthe
 
 public class grafic extends JPanel {
 

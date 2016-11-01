@@ -18,6 +18,9 @@ public class Player {
     private int y;
     private Image picture;
 
+    //création de l'objet joueur avec nom, position aléatoire et l'image de celui-ci
+    
+    
 public Player(String Name,int x, int y) {
 this.nom = Name;
    
@@ -46,6 +49,8 @@ picture = img3.getImage();
              
 }    
 
+//diverses méthodes pour obtenir l'image, le nom et les coordonnées du joueur
+
 public Image getImage() {
 return picture;
 }
@@ -70,6 +75,8 @@ public int getY() {
 return y;
 }
 
+//Vérification de la nouvelle position du joueur lors d'un déplacement 
+
 public char check() throws IOException {
   char u = q.getMaps(x,y-1);
                 return u;    
@@ -88,6 +95,8 @@ public char check1() throws IOException {
 }
 
 
+ //méthodes pour le changer la position du joueur lorsqu'il appuie sur le bouton correspondant
+ 
 public void  moveUp() throws IOException{
 
     x=x+0;
