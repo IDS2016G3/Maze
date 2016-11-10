@@ -33,7 +33,7 @@ public static JPanel b1 = new JPanel();
 
 
    public static void main(String[] args){
-   //new board();
+   new board();
    
    } 
   
